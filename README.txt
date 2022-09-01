@@ -1,31 +1,31 @@
 # freepbx-debian11 installation
 
-#sudo apt -y update
+sudo apt -y update
 
-#sudo apt -y upgrade
+sudo apt -y upgrade
 
-#sudo reboot
+sudo reboot
 
-#sudo apt -y install git vim curl wget libnewt-dev libssl-dev libncurses5-dev subversion libsqlite3-dev build-essential libjansson-dev libxml2-dev uuid-dev
+sudo apt -y install git vim curl wget libnewt-dev libssl-dev libncurses5-dev subversion libsqlite3-dev build-essential libjansson-dev libxml2-dev uuid-dev
 
-#cd /usr/src/
+cd /usr/src/
 
-#sudo wget https://downloads.asterisk.org/pub/telephony/asterisk/asterisk-18-current.tar.gz
+sudo wget https://downloads.asterisk.org/pub/telephony/asterisk/asterisk-18-current.tar.gz
 
-#sudo tar xvf asterisk-18-current.tar.gz
+sudo tar xvf asterisk-18-current.tar.gz
 
-#cd asterisk-18*/
+cd asterisk-18*/
 
-#sudo contrib/scripts/get_mp3_source.sh
+sudo contrib/scripts/get_mp3_source.sh
 
-#sudo contrib/scripts/install_prereq install
+sudo contrib/scripts/install_prereq install
 
-#sudo ./configure
+sudo ./configure
 
-#make menuselect
-
+make menuselect
+======================================
 Under Add-ons, select chan_ooh323 and format_mp3
-
+========================================
 On Core Sound Packages, pick audio packets formats as shown
 -WAV
 -ULAW
@@ -36,33 +36,32 @@ On Core Sound Packages, pick audio packets formats as shown
 -SLN16
 -SILEN7
 -SILEN14
-
+=============================================
 Music On Hold and select the below modules
 -WAV
 -ULAW
 -ALAW
 -GSM
-
-
+=============================================
 Also select on Extra Sound Packages as shown
 -WAV
 -ULAW
 -ALAW
 -GSM
-
+============================================
 Under Applications, enable app_macro
+==============================================
+sudo make
 
-#sudo make
+sudo make install
 
-#udo make install
+sudo make progdocs
 
-#sudo make progdocs
+sudo make samples
 
-#sudo make samples
+sudo make config
 
-#sudo make config
-
-#sudo ldconfig
+sudo ldconfig
 
 sudo groupadd asterisk
 
